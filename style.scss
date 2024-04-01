@@ -1,4 +1,4 @@
-$bg-color: #D3B6F7;
+$bg-color: #AA67FF;
 $btn-bg: #AA67FF;
 
 body {
@@ -81,15 +81,27 @@ h3:hover {
 .right-flex {
   display: flex;
   flex-direction: column;
-  border: 1px solid purple;
+  border:1.8px solid $bg-color;
   border-radius: 10px;
   padding: 25px;
+  animation-name: example;
+  animation-duration: 0.5s;
+  // position: relative;
 }
 
 .divider {
-  border: 1px solid $bg-color;
+  border: 1.5px solid $bg-color;
   height: 500px;
   margin: 0 8vw;
+}
+.right-flex-hide{
+  display: none;
+ 
+}
+@keyframes example {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-15px) }
+  100% { transform: translateY(0) }
 }
 
 // footer {
