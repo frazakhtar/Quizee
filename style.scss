@@ -1,0 +1,102 @@
+$bg-color: #D3B6F7;
+$btn-bg: #AA67FF;
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #F5EFF0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0px 10px;
+  background-color: $bg-color;
+}
+
+h3 {
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+label {
+  font-size: 25px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+
+}
+
+input {
+  border: none;
+  color: #444;
+  font-size: 1.2rem;
+  padding: 0.7rem 3rem;
+  border-radius: 2px;
+  border-bottom: 1px solid purple;
+}
+
+button {
+  border: 1px solid rgb(179, 131, 226);
+  width: 50%;
+  margin: auto;
+  height: 35px;
+  border-radius: 5px;
+  background-color: $btn-bg;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px)
+}
+
+input::placeholder {
+  color: $bg-color
+}
+
+input:focus {
+  outline-color: $bg-color
+}
+
+h3:hover {
+  transform: translateY(-3px)
+}
+
+.left-flex {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.right-flex {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid purple;
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.divider {
+  border: 1px solid $bg-color;
+  height: 500px;
+  margin: 0 8vw;
+}
+
+// footer {
+//     position: fixed;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     background-color: $bg-color;
+//     text-align: center;
+//  }

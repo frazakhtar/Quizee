@@ -1,13 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.scss" />
+  <title>Quizz</title>
+</head>
+
+<body>
+  <main>
+    <div class="nav">
+      <label> &#128218;</label>
+      <h3>
+        Quizzzy
+      </h3>
+    </div>
+
+    <section>
+      <div class="left-flex">
+        <b>Welcome! login to take your test now. All the best !</b>
+        <br />
+        <text>Not yet Registered! Signup now.</text>
+        <br />
+        <button id=''>
+          Signup
+        </button>
+      </div>
+      <div class="divider"></div>
+      <div class="right-flex">
+        <h2>Login</h2>
+        <input placeholder='Email' type='email' id='email' />
+        <br />
+        <input placeholder='Password' type='password' id='pswd' />
+        <br />
+        <button id='loginBtn'>
+          Login
+        </button>
+      </div>
+    </section>
+    <!-- <footer>
+        @copyrights reserved.
+      </footer> -->
+  </main>
+  <script type="module" src="./src/main/index.js">
+  </script>
+</body>
+
 </html>
