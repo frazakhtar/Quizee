@@ -23,6 +23,11 @@ h3 {
 
 }
 
+img{
+width:400px;
+
+}
+
 label {
   font-size: 25px;
 }
@@ -31,8 +36,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-
+  margin-top: 80px;
 }
 
 input {
@@ -75,7 +79,6 @@ h3:hover {
 .left-flex {
   display: flex;
   flex-direction: column;
-
 }
 
 .right-flex {

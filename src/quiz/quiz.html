@@ -5,62 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="quiz.scss" />
+  <script type="module" src="../LitComponents/quiz-form.js"></script>
   <script src = "quiz.js"></script>
   <title>Document</title>
 </head>
 
 <body>
   <main id="">
-    <div class="nav">
-      <label> &#128218;</label>
-      <h3>
-        Quizzzy
-      </h3>
-    </div>
-    
-    <section class='quiz-section'>
-      <div>Quiz will end in<span id="time">01:00</span> minutes!</div>
-      <div class="qstn">
-        <label for='serial-num'><b>1</b></label>
-        <text>Question text goes here .....</text>
-      </div>
-
-      <div class='options'>
-        <div class="options-flex">
-          <div class="option-items">
-            <input type='radio' name="option" />
-            <label for='option1'>Option 1</label>
-          </div>
-          <div class="option-items">
-            <input type='radio' name="option" />
-            <label for='option2'>Option 2</label>
-          </div>
-          <!-- </div> -->
-
-          <!-- <div class="options-flex"> -->
-          <div class="option-items">
-            <input type='radio' name="option" />
-            <label for='option3'>Option 3</label>
-          </div>
-          <div class="option-items">
-            <input type='radio' name="option" />
-            <label for='option4'>Option 4</label>
-          </div>
-        </div>
-
-      </div>
-      <div>
-
-      </div>
-      <div class="btns">
-        <button class="submit-btn">
-          Submit
-        </button>
-        <button class="next-btn">
-          Next
-        </button>
-      </div>
-    </section>
+    <simple-greeting name="World"></simple-greeting>
   </main>
 
 </body>
