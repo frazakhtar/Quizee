@@ -2,12 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./global.css" />
+    <script type="module" src="./src/LitComponents/Header/header.js"></script>
+    <script type="module" src="./src/LitComponents/QuestionWithOptions/question-options.js"></script>
+    <script>
+      const globalState = {
+        name:"Quiz",
+        selectedAnswers : [],
+        save: function() {
+    for (var prop in this) {
+      if (this.hasOwnProperty(prop) && prop !== 'save' && typeof this[prop] !== 'function') {
+        localStorage.setItem(prop, JSON.stringify(this[prop]));
+      }
+    }
+  }
+      }
+
+      function fetchDataFromLocalStorage() {
+  for (var prop in globalState) {
+    if (globalState.hasOwnProperty(prop) && prop !== 'save' && typeof globalState[prop] !== 'function') {
+      var storedValue = localStorage.getItem(prop);
+      if (storedValue !== null) {
+        globalState[prop] = JSON.parse(storedValue);
+      }
+    }
+  }
+}
+      window.onload = function() {
+        fetchDataFromLocalStorage();
+        globalState.save()
+      }
+    </script>
+    <script src="src/main.ts" defer></script>
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <!-- <h1>Test</h1>
+    <div id="app"></div> -->
+    <!-- <script type="module" src="/src/main.ts"></script> -->
+    <!-- <header-litcomponent></header-litcomponent> -->
+    <question-options></question-options>
+    <div id="space"></div>
   </body>
 </html>
