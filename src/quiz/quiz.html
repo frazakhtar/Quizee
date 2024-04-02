@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="quiz.scss" />
-  <script src = "quiz.js"></script>
+  <script type="module" src = "quiz.js"></script>
   <title>Document</title>
 </head>
 
@@ -21,30 +21,30 @@
     <section class='quiz-section'>
       <div>Quiz will end in<span id="time">01:00</span> minutes!</div>
       <div class="qstn">
-        <label for='serial-num'><b>1</b></label>
-        <text>Question text goes here .....</text>
+        <label for='serial-num'><b id="qNum"></b></label>
+        <text id="questionText">Question text goes here .....</text>
       </div>
 
       <div class='options'>
         <div class="options-flex">
           <div class="option-items">
             <input type='radio' name="option" />
-            <label for='option1'>Option 1</label>
+            <label for='option1' id="optOne"></label>
           </div>
           <div class="option-items">
             <input type='radio' name="option" />
-            <label for='option2'>Option 2</label>
+            <label for='option2' id="optTwo"></label>
           </div>
           <!-- </div> -->
 
           <!-- <div class="options-flex"> -->
           <div class="option-items">
             <input type='radio' name="option" />
-            <label for='option3'>Option 3</label>
+            <label for='option3' id="optThree"></label>
           </div>
           <div class="option-items">
             <input type='radio' name="option" />
-            <label for='option4'>Option 4</label>
+            <label for='option4' id="optFour"></label>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
         <button class="submit-btn">
           Submit
         </button>
-        <button class="next-btn">
+        <button class="next-btn" id="nextBtn">
           Next
         </button>
       </div>
