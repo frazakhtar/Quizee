@@ -43,10 +43,26 @@ pswd.addEventListener('blur', (e) => {
     pswdInp = e.target.value
 })
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click', async() => {
     console.log(emailInp, pswdInp)
+ 
     if (emailInp && pswdInp) {
-        window.location.pathname = '/src/quiz/quiz.html'
+        let data = {
+            userName: emailInp,
+            password: pswdInp
+        }
+        let res = await fetch("http://localhost:3000/api/login",{
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+        })
+        console.log(res)
+
+        if(res.statusText=="OK"){
+            window.location.pathname = '/src/quiz/quiz.html' 
+        }else{
+            document.getElementById("errorText").innerHTML = "Invalid Credentials"
+        }  
     }
     else {
         alert("Invalid Email or Password")
