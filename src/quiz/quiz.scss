@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 $bg-color: #F5EFF0;
 
 body {
@@ -6,6 +8,7 @@ body {
   box-sizing: border-box;
   background-color: $bg-color;
   font-size: 20px;
+  font-family: "lato", sans-serif;
 }
 
 .nav {
@@ -13,7 +16,8 @@ body {
   align-items: center;
   max-width: 100%;
   padding: 0px 10px;
-  background-color: #D3B6F7;
+  background-color: #4652DF;;
+  color:white;
 
   h3 {
     margin-left: 10px;
@@ -29,7 +33,7 @@ input{
 .quiz-section {
   margin: 100px auto 0 auto;
   max-width: 50%;
-  border: 1px solid purple;
+  border: 1px solid #4652DF;;
   border-radius: 10px;
   padding: 5px;
 }
@@ -90,4 +94,8 @@ input{
 
  .next-btn:hover{
   background-color:  rgb(122, 108, 249);
+ }
+
+ #pwdErrorMsg{
+  color: rgb(255, 0, 0);
  }

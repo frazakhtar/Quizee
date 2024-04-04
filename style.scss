@@ -1,11 +1,14 @@
-$bg-color: #AA67FF;
-$btn-bg: #AA67FF;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+$bg-color: #4652DF;
+$btn-bg: #4652DF;
 
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   background-color: #F5EFF0;
+  font-family: "lato", sans-serif;
 }
 
 .nav {
@@ -13,6 +16,7 @@ body {
   align-items: center;
   max-width: 100%;
   padding: 0px 10px;
+  color:white;
   background-color: $bg-color;
 }
 
@@ -23,10 +27,7 @@ h3 {
 
 }
 
-img{
-width:400px;
 
-}
 
 label {
   font-size: 25px;

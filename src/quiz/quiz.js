@@ -1,3 +1,5 @@
+import data from './DummyData.json'
+
 
 // function startTimer(duration, display) {
 //     var timer = duration, minutes, seconds;
@@ -16,8 +18,4 @@
 //     }, 1000);
 // }
 
-// window.onload = function () {
-//     var fiveMinutes = 60 * 1,
-//         display = document.querySelector('#time');
-//     startTimer(fiveMinutes, display);
-// };
+
