@@ -15,7 +15,8 @@ body {
   align-items: center;
   max-width: 100%;
   padding: 0px 10px;
-  background-color: #D3B6F7;
+  background-color: #4652df;
+  color: #fff;
 
   h3 {
     margin-left: 10px;
