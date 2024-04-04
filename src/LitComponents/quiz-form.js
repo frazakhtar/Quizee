@@ -24,7 +24,6 @@ export class SimpleGreeting extends LitElement {
     this.questionId = this.getInitialQuestionId();
     questions: []
   }
-  
 
   getInitialQuestionId() {
     let lastElement = globalState.selectedAnswers && globalState.selectedAnswers.slice(-1);
@@ -41,37 +40,8 @@ export class SimpleGreeting extends LitElement {
     args: () => []
   });
 
-  nextHandler() {
-    const findQuestion = this.questions.find(que => que.id == this.questionId + 1);
-    let answerData;
-    if(this.selectedChoice?.value) {
-      answerData = { id: this.questionId, option: this.selectedChoice.value }
-      const answerAlreadyExist = globalState.selectedAnswers.find(ans => ans.id == this.questionId);
-      if (answerAlreadyExist) {
-        //console.log("Answer exist ", answerAlreadyExist);
-        const index = globalState.selectedAnswers.findIndex(item => item.id == this.questionId);
-        globalState.selectedAnswers[index] = answerData;
-      }
-      else {
-        globalState.selectedAnswers.push(answerData);
-      }
-      globalState.save();
-      console.log("Global State ", globalState.selectedAnswers);
-    }
-
-    if (findQuestion) {
-      this.questionId = this.questionId + 1;
-    }
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    if(this.questions?.length == globalState.selectedAnswers?.length) {
-      this.submitButton?.classList.remove("disabled");
-    }
-  }
-
   enableSubmit() {
+    console.log("this.questions?.length ",this.questions?.length)
     if(this.questions?.length == globalState.selectedAnswers?.length) {
       console.log("From updated ")
       this.submitButton?.classList.remove("disabled");
@@ -86,8 +56,6 @@ export class SimpleGreeting extends LitElement {
     }
     
   }
-
-
 
   get submitButton() {
     return this.renderRoot?.querySelector(".submit-btn") ?? null;
@@ -122,8 +90,36 @@ export class SimpleGreeting extends LitElement {
     }
   }
 
+  nextHandler(targetId) {
+    const findQuestion = this.questions.find(que => que.id == targetId ? targetId : this.questionId + 1);
+    let answerData;
+    if(this.selectedChoice?.value) {
+      answerData = { id: this.questionId, option: this.selectedChoice.value }
+      const answerAlreadyExist = globalState.selectedAnswers.find(ans => ans.id == this.questionId);
+      if (answerAlreadyExist) {
+        const index = globalState.selectedAnswers.findIndex(item => item.id == this.questionId);
+        globalState.selectedAnswers[index] = answerData;
+      }
+      else {
+        globalState.selectedAnswers.push(answerData);
+      }
+      globalState.save();
+      console.log("Global State ", globalState.selectedAnswers);
+      this.enableSubmit();
+    }
+
+    if (findQuestion) {
+      this.questionId = targetId ? targetId : this.questionId + 1;
+    }
+  }
+
   queNavHandler(id) {
-     this.questionId = id;
+    this.nextHandler(id);
+  }
+
+  firstUpdated() {
+    console.log('Element has been rendered for the first time');
+    console.log('this.questions', this.questions);
   }
 
   render() {
@@ -194,10 +190,10 @@ export class SimpleGreeting extends LitElement {
   
         <div class="btns">
           <button class="submit-btn disabled">
-            Submit
+            SUBMIT
           </button>
           <button class="next-btn" @click=${this.nextHandler}>
-            Next
+            NEXT
           </button>
         </div></section>
       </div>
@@ -260,4 +256,4 @@ export class SimpleGreeting extends LitElement {
   //   </div>`;
   // }
 }
-customElements.define('simple-greeting', SimpleGreeting);
+customElements.define('quiz-form', SimpleGreeting);
