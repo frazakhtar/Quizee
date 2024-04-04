@@ -68,3 +68,47 @@ btn.addEventListener('click', async() => {
         alert("Invalid Email or Password")
     }
 })
+
+//SignUp functionality here
+
+const registerEmail = document.getElementById("signUpEmail")
+const registerPassword = document.getElementById("signUpPswd")
+const confirmPassword = document.getElementById("signUpCpswd")
+const signUpButton = document.getElementById("signUpBtn")
+
+let regEmail;
+let regPassword;
+let confPassword;
+registerEmail.addEventListener('blur',(e)=>{
+    regEmail= e.target.value;
+})
+
+registerPassword.addEventListener('blur',(e)=>{
+    regPassword= e.target.value;
+})
+
+confirmPassword.addEventListener('blur',(e)=>{
+    confPassword= e.target.value;
+})
+
+signUpButton.addEventListener('click',async()=>{
+  if(regPassword===confPassword){
+
+    let data = {
+        email: regEmail,
+        password: regPassword,
+    }
+
+    let res = await fetch("http://localhost:3000/api/register",{
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+    })
+
+    console.log(res)
+    
+  }else{
+    document.getElementById("pwdErrorMsg").innerHTML = "Password did not match"
+  }
+})
+
