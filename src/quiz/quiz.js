@@ -1,4 +1,4 @@
-import data from './DummyData.json'
+//import data from './DummyData.json'
 
 
 // function startTimer(duration, display) {

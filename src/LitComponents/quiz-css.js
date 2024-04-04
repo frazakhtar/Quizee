@@ -1,4 +1,4 @@
-import {html,css, LitElement} from 'lit';
+import {css} from 'lit';
 
 
 export const buttonStyles = css`
@@ -84,6 +84,7 @@ input{
 .submit-btn.disabled {
   cursor:not-allowed;
   opacity:0.5;
+  background-color:gray;
 }
 
 .next-btn {
@@ -93,16 +94,11 @@ input{
  
  }
 
- .submit-btn:hover{
-  background-color: rgb(60, 211, 161);
- }
-
  .next-btn:hover{
   background-color:  rgb(122, 108, 249);
  }
 
  .quiz__container {
-    border:1px solid red;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -138,5 +134,5 @@ input{
  .quiz__question:hover {
   cursor:pointer;
  }
- 
+
  `;
