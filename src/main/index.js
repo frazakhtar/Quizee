@@ -45,7 +45,10 @@ pswd.addEventListener('blur', (e) => {
 
 btn.addEventListener('click', () => {
     console.log(emailInp, pswdInp)
-    if (emailInp && pswdInp) {
+    if (emailInp==="admin" && pswdInp==="123") {
+        window.location.pathname = '/src/admin/admin.html'
+    }
+    else if(emailInp && pswdInp){
         window.location.pathname = '/src/quiz/quiz.html'
     }
     else {
