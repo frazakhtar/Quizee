@@ -48,7 +48,7 @@ btn.addEventListener('click', async() => {
  
     if (emailInp && pswdInp) {
         let data = {
-            userName: emailInp,
+            email: emailInp,
             password: pswdInp
         }
         let res = await fetch("http://localhost:3000/api/login",{
