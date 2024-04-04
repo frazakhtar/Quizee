@@ -91,7 +91,13 @@ export class SimpleGreeting extends LitElement {
   }
 
   nextHandler(targetId) {
-    const findQuestion = this.questions.find(que => que.id == targetId ? targetId : this.questionId + 1);
+    const findQuestion = this.questions.find(que => {
+      const nextQueId = Number.isInteger(targetId) ? targetId : this.questionId + 1;
+      console.log("nextQueId ",nextQueId)
+      console.log("que.id ",que.id)
+      return que.id == nextQueId
+    });
+    console.log("Find question ",findQuestion)
     let answerData;
     if(this.selectedChoice?.value) {
       answerData = { id: this.questionId, option: this.selectedChoice.value }
@@ -109,7 +115,7 @@ export class SimpleGreeting extends LitElement {
     }
 
     if (findQuestion) {
-      this.questionId = targetId ? targetId : this.questionId + 1;
+      this.questionId = Number.isInteger(targetId) ? targetId : this.questionId + 1;
     }
   }
 
@@ -127,6 +133,8 @@ export class SimpleGreeting extends LitElement {
       pending: () => html`loading`,
       complete: (questions) => {
         const currentQuestion = questions.find(q => q.id == this.questionId);
+        console.log("Current Questions ",currentQuestion);
+        console.log("Question id ",this.questionId)
         const { id, question, A, B, C, D } = currentQuestion;
         console.log("Current Q ", currentQuestion)
         return html` <div class="nav">
