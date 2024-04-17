@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+$bg-color: #4652df;
+$btn-bg: #4652df;
+
+.body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f5eff0;
+  font-family: "lato", sans-serif;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0px 10px;
+  color: white;
+  background-color: $bg-color;
+}
+
+h2 {
+  text-align: center;
+}
+
+img {
+  display: inline-table;
+  position: absolute;
+  float: left;
+  left: 2vw;
+  top: 30px;
+}
+
+.flex {
+  display: flex;
+  height: 150px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin: 20px;
+  padding: 20px;
+  width: 33%;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  background-color: #fff;
+  position: relative;
+}
+
+.card-full {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  height: 300px;
+}
+
+.lbl-content {
+  border-top: 1px solid grey;
+  text-align: center;
+  cursor: pointer;
+}
+
+.imgs {
+  height: 20vh;
+  width: 8vw;
+}
+
+h3 {
+  text-align: center;
+}
