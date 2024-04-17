@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="dashboard.scss" />
+    <link
+      href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="body">
+    <header>
+      <div class="nav">
+        <label> &#128218;</label>
+        <h3>Quizzzy</h3>
+      </div>
+    </header>
+
+    <main>
+      <h2>Welcome !</h2>
+      <div class="flex">
+        <div class="card">
+          <div class="icon">
+            <img src="/src/icons/notes-gr.png" />
+          </div>
+          <text>Submit new test</text>
+
+          <button
+            class="mui-btn mui-btn--flat mui-btn--primary mui-btn mui-btn--raised lbl-content"
+            id="add-qstn"
+          >
+            Add
+          </button>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <img src="/src/icons/result.png" />
+          </div>
+          <text>View results</text>
+          <button
+            class="mui-btn mui-btn--flat mui-btn--primary mui-btn mui-btn--raised lbl-content"
+          >
+            View
+          </button>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <img src="/src/icons/Submitted.png" />
+          </div>
+          <text>View Submitted tests</text>
+          <button
+            class="mui-btn mui-btn--flat mui-btn--primary mui-btn mui-btn--raised lbl-content"
+          >
+            View
+          </button>
+        </div>
+      </div>
+      <div class="top-performers">
+        <h3>Top performers</h3>
+        <div class="card-full">
+          <div class="card">
+            <div class="icon">
+              <img src="/src/icons/img_avatar.png" class="imgs" />
+            </div>
+            <text>Student 1</text>
+            <text>ID: 1</text>
+            <text>Class 10</text>
+            <text>Test ABC</text>
+            <text>Score: 90%</text>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <img src="/src/icons/img_avatar.png" class="imgs" />
+            </div>
+            <text>Student 2</text>
+            <text>ID: 2</text>
+            <text>Class 10</text>
+            <text>Test XYZ</text>
+            <text>Score: 80%</text>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <img src="/src/icons/img_avatar.png" class="imgs" />
+            </div>
+            <text>Student 3</text>
+            <text>ID: 3</text>
+            <text>Class 10</text>
+            <text>Test LMN</text>
+            <text>Score: 70%</text>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Add your footer content here -->
+    </footer>
+    <script src="../LitComponents/dashboard.js"></script>
+  </body>
+</html>
