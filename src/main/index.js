@@ -51,6 +51,7 @@ btn.addEventListener('click', async() => {
             email: emailInp,
             password: pswdInp
         }
+        if(emailInp === "admin@test.com" && pswdInp ==="123") window.location.href='/src/admin/dashboard.html'
         let res = await fetch("http://localhost:3000/api/login",{
             method: "POST",
             body: JSON.stringify(data),

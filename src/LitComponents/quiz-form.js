@@ -137,12 +137,7 @@ export class SimpleGreeting extends LitElement {
         console.log("Question id ",this.questionId)
         const { id, question, A, B, C, D } = currentQuestion;
         console.log("Current Q ", currentQuestion)
-        return html` <div class="nav">
-        <label> &#128218;</label>
-        <h3>
-          Quizzzy
-        </h3>
-      </div>
+        return html` 
       
       <div class="quiz__container">
         <!-- <div class="quiz__navigation"> -->
@@ -165,7 +160,6 @@ export class SimpleGreeting extends LitElement {
           })}
         </div>
         <section class='quiz-section'>
-        <div>Quiz will end in <span id="time">01:00</span> minutes!</div>
         <div class="qstn">
           <label for='serial-num'><b>${id}</b></label>
               <text>${question}</text>
